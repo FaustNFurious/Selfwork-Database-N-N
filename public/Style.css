@@ -1,0 +1,36 @@
+/* Header Home Page */
+
+.header-custom {
+    background-image: url('/Media/Bg-Image-Header.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+
+
+
+/* Contacts Page */
+
+.box-custom {
+    border: solid white 3px;
+    border-radius: 20px;
+    min-height: 100px;
+    max-width: 300px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.box-custom:hover {
+    border: solid yellow 3px;
+    border-radius: 20px;
+    min-height: 100px;
+    max-width: 300px;
+    transform: translateY(10px);
+    cursor: pointer;
+}
+
+.icons-custom {
+    font-size: 50px;
+}
