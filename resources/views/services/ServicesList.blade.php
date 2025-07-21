@@ -37,7 +37,7 @@
                     <a class="nav-link active" href="{{route('Contacts')}}">Contatti</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{route('ServicesList')}}">Servizi</a>
+                    <a class="nav-link active" href="{{route('services.ServicesList')}}">Servizi</a>
                 </li>
 
             </ul>
@@ -66,7 +66,7 @@
                             <h5 class="card-title">{{$computer['name']}}</h5>
                             <h6 class="card-subtitle mb-2 text-body-secondary">{{$computer['brand']}}</h6>
                             <p class="card-text">utilizzo {{$computer['Ufficio']}}</p>
-                            <a href="{{route('ServicesDetails', ['id' => $computer['id']])}}" class="btn btn-primary">Read More</a>
+                            <a href="{{route('services.ServicesDetails', ['id' => $computer['id']])}}" class="btn btn-primary">Read More</a>
                         </div>
                     </div>
                 </div>

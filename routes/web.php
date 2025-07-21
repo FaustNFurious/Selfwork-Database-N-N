@@ -66,7 +66,7 @@ Route::get('/Servizi', function() {
         ['id' => '2', 'name' => 'HP Pavillon', 'brand' => 'HP', 'utilizzo' => 'Ufficio', 'img' => '/Media/Img-Products/HPPavillon.jpg'],
         ['id' => '3', 'name' => 'MSI Katana', 'brand' => 'MSI', 'utilizzo' => 'Gaming', 'img' => '/Media/Img-Products/MSIKatana.jpg'],
     ];
-    return view('ServicesList', ['computers' => $computers]);
+    return view('services.ServicesList', ['computers' => $computers]);
 
 })->name('ServicesList');
 
@@ -81,7 +81,7 @@ Route::get('/Servizi/dettagli/{id}', function($id) {
 
     foreach ($computers as $computer) {
         if ($id == $computer['id']) {
-            return view('ServicesDetails', ['computer' => $computer]);
+            return view('services.ServicesDetails', ['computer' => $computer]);
         }
     }
 })->name('ServicesDetails');
