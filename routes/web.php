@@ -62,19 +62,19 @@ Route::get('/Contatti', function() {
 /* Link Pagina Servizi */
 Route::get('/Servizi', function() {
     $computers = [
-        ['id' => '1', 'name' => 'Asus Rog Ally X', 'brand' => 'Asus', 'utilizzo' => 'Gaming portatile', 'img' => '/Media/Img-Products/AsusRogAllyX.jpg'],
+        ['id' => '1', 'name' => 'Asus Rog Ally X', 'brand' => 'Asus', 'utilizzo' => 'Gaming portatile', 'img' => '/Media/Img-Products/AsusRogAllyX.png'],
         ['id' => '2', 'name' => 'HP Pavillon', 'brand' => 'HP', 'utilizzo' => 'Ufficio', 'img' => '/Media/Img-Products/HPPavillon.jpg'],
         ['id' => '3', 'name' => 'MSI Katana', 'brand' => 'MSI', 'utilizzo' => 'Gaming', 'img' => '/Media/Img-Products/MSIKatana.jpg'],
     ];
     return view('services.ServicesList', ['computers' => $computers]);
 
-})->name('ServicesList');
+})->name('services.ServicesList');
 
 
 
 Route::get('/Servizi/dettagli/{id}', function($id) {
     $computers = [
-        ['id' => '1', 'name' => 'Asus Rog Ally X', 'brand' => 'Asus', 'utilizzo' => 'Gaming portatile', 'img' => '/Media/Img-Products/AsusRogAllyX.jpg'],
+        ['id' => '1', 'name' => 'Asus Rog Ally X', 'brand' => 'Asus', 'utilizzo' => 'Gaming portatile', 'img' => '/Media/Img-Products/AsusRogAllyX.png'],
         ['id' => '2', 'name' => 'HP Pavillon', 'brand' => 'HP', 'utilizzo' => 'Ufficio', 'img' => '/Media/Img-Products/HPPavillon.jpg'],
         ['id' => '3', 'name' => 'MSI Katana', 'brand' => 'MSI', 'utilizzo' => 'Gaming', 'img' => '/Media/Img-Products/MSIKatana.jpg'],
     ];
@@ -84,4 +84,4 @@ Route::get('/Servizi/dettagli/{id}', function($id) {
             return view('services.ServicesDetails', ['computer' => $computer]);
         }
     }
-})->name('ServicesDetails');
+})->name('services.ServicesDetails');

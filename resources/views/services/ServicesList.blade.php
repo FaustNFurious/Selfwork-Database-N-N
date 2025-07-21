@@ -54,7 +54,7 @@
       <div class="container-fluid section-custom">
         <div class="row align-items-center justify-content-center">
             <div class="row">
-                <h3 class="text-white text-center display-4">Tutti i nostri prodotti</h3>
+                <h3 class="text-dark text-center display-4 my-5">Tutti i nostri prodotti</h3>
             </div>
 
             @foreach($computers as $computer)
@@ -65,7 +65,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{$computer['name']}}</h5>
                             <h6 class="card-subtitle mb-2 text-body-secondary">{{$computer['brand']}}</h6>
-                            <p class="card-text">utilizzo {{$computer['Ufficio']}}</p>
+                            <p class="card-text">utilizzo {{$computer['utilizzo']}}</p>
                             <a href="{{route('services.ServicesDetails', ['id' => $computer['id']])}}" class="btn btn-primary">Read More</a>
                         </div>
                     </div>
