@@ -34,3 +34,19 @@
 .icons-custom {
     font-size: 50px;
 }
+
+
+
+/* Servizi Page */
+.servizi-custom {
+    background-image: url('/Media/Bg-Image-Header.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.card-img-custom {
+    height: 200px;
+    object-position: center;
+}

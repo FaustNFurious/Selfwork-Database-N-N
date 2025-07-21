@@ -19,7 +19,7 @@
 
     <nav class="navbar navbar-expand-lg bg-dark fixed-top" data-bs-theme="dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/"><i class="bi bi-rocket-takeoff-fill"></i></a>
+            <a class="navbar-brand" href="{{route('Home')}}"><i class="bi bi-rocket-takeoff-fill"></i></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -28,15 +28,18 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link active" aria-current="page" href="{{route('Home')}}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/Chi-Siamo">Chi Siamo</a>
+                    <a class="nav-link active" href="{{route('AboutUs')}}">Chi Siamo</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/Contatti">Contatti</a>
+                    <a class="nav-link active" href="{{route('Contacts')}}">Contatti</a>
                 </li>
-                
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{route('ServicesList')}}">Servizi</a>
+                </li>
+
             </ul>
             
             </div>
@@ -68,6 +71,31 @@
         </div>
 
     </header>
+
+
+    <section>
+
+        <div class="container my-5">
+            <div class="row align-items-center justify-content-around">
+
+                @foreach ($users as $user)
+
+                    <div class="col-12 col-md-4">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{$user['name']}} {{$user['surname']}}</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">{{$user['role']}}</h6>
+                                <a href="{{route('AboutUsDetails', ['name' => $user['name']])}}" class="btn btn-primary">Show More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                @endforeach
+
+            </div>
+        </div>
+
+    </section>
 
     
 

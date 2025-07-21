@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contatti</title>
+    <title>Blog</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
+
 
     <link rel="stylesheet" href="/Style.css">
 
@@ -49,69 +49,34 @@
 
 
 
-    <header>
+    <section>
 
-        <div class="container-fluid header-custom ">
-
-            <div class="row vh-100 align-items-center justify-content-around">
-
-                <div class="col-12">
-                    <h2 class="text-light text-center display-1 fw-bold">Come Contattarci</h2>
-                </div>
-
-                <div class="col-md-3 box-custom text-center d-flex flex-column justify-content-center align-items-center text-white">
-
-                    <div class="row">
-                        <div class="col-12">
-                            <i class="icons-custom bi bi-whatsapp"></i>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12">
-                            <p>Scrivici su Whatsapp</p>
-                        </div>
-                    </div>
-                    
-                </div>
-
-                <div class="col-md-3 box-custom text-center d-flex flex-column justify-content-center align-items-center text-white">
-
-                    <div class="row">
-                        <div class="col-12">
-                            <i class="icons-custom bi bi-instagram"></i>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12">
-                            <p>Taggaci su Instagram</p>
-                        </div>
-                    </div>
-                    
-                </div>
-
-                <div class="col-md-3 box-custom text-center d-flex flex-column justify-content-center align-items-center text-white">
-                
-                    <div class="row">
-                        <div class="col-12">
-                            <i class="icons-custom bi bi-twitter"></i>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12">
-                            <p>Scrivici su Twitter</p>
-                        </div>
-                    </div>
-                    
-                </div>
-
+      <div class="container-fluid section-custom">
+        <div class="row align-items-center justify-content-center">
+            <div class="row">
+                <h3 class="text-white text-center display-4">Tutti i nostri prodotti</h3>
             </div>
 
-        </div>
+            @foreach($computers as $computer)
 
-    </header>
+                <div class="col-12 col-md-4">
+                    <div class="card my-5 mb-5" style="width: 18rem;">
+                        <img src="{{$computer['img']}}" class="card-img-top card-img-custom" alt="Immagine di {{$computer['name']}}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$computer['name']}}</h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">{{$computer['brand']}}</h6>
+                            <p class="card-text">utilizzo {{$computer['Ufficio']}}</p>
+                            <a href="{{route('ServicesDetails', ['id' => $computer['id']])}}" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+            @endforeach
+        
+        </div>
+      </div>
+
+    </section>
 
     
 
