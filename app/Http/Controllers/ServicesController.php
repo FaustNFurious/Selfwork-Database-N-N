@@ -28,6 +28,6 @@ class ServicesController extends Controller
             }
         }
 
-}
+    }
 
 }
