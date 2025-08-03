@@ -44,3 +44,10 @@ Route::get('/Contatti', function() {
 Route::get('/Servizi', [ServicesController::class, 'servicesList'])->name('services.ServicesList');
 
 Route::get('/Servizi/dettagli/{id}', [ServicesController::class, 'servicesDetails'])->name('services.ServicesDetails');
+
+
+
+
+
+/* Invio Email */
+Route::post('/ContattiEmail', [ServicesController::class, 'contattiEmail'])->name('contattiEmail');

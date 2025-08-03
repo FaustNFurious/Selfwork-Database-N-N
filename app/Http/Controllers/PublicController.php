@@ -35,4 +35,11 @@ class PublicController extends Controller
 
     }
 
+
+    public function contattiEmail(Request $request) {
+
+
+
+    }
+
 }

@@ -63,6 +63,32 @@
 
             </div>
 
+            <div class="row align-items-center justify-content-around">
+                <h3 class="text-center text-white display-6">Scrivici una Email</h3>
+
+                <div class="col-12 text-white">
+                    
+                    <form class="m-5" method="post" action="{{route('contattiEmail')}}">
+                        <div class="mb-3">
+                            <label for="emailUser" class="form-label">Inserire la propria Email</label>
+                            <input type="email" class="form-control" id="emailUser" class="emailUser" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="user" class="form-label">Inserire il proprio nome</label>
+                            <input type="text" class="form-control" id="user" class="user" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="testoUser" class="form-label">Scrivici qualcosa</label>
+                            <textarea name="testoUser" id="testoUser" cols="20" rows="5" class="form-control"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    
+                </div>
+                
+            </div>
+
         </div>
 
     </header>
