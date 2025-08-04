@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 
 class PublicController extends Controller
@@ -38,7 +40,20 @@ class PublicController extends Controller
 
     public function contattiEmail(Request $request) {
 
+        $emailUser = $request->input('emailUser');
+        $user = $request->input('user');
+        $testoUser = $request->input('testoUser');
+        $datiUser = compact('emailUser', 'user', 'testoUser');
 
+
+        try {
+            Mail::to($emailUser)->send(new ContactMail($datiUser));
+
+        } catch (Exception $e) {
+            return redirect(route('home'))->with('erroreEmail', 'Ci scusiamo per il disagio, errore con il server');
+        }
+        
+        return redirect(route('home'))->with('email-inviata', 'Hai inviato la tua email');
 
     }
 

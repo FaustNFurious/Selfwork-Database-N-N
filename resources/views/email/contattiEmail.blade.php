@@ -13,6 +13,10 @@
     
     <h1>Grazie per averci scritto</h1>
     <h3>Ti ricontatteremo al più presto</h3>
+    <h4>Riepilogo Email</h4>
+    <p>{{ $datiUser['emailUser'] }}</p>
+    <p>{{ $datiUser['user'] }}</p>
+    <p>{{ $datiUser['testoUser'] }}</p>
 
 </body>
 
