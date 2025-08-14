@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Mail\ContactMail;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
+
 
 class PublicController extends Controller
 {
@@ -40,7 +43,7 @@ class PublicController extends Controller
 
     public function contattiEmail(Request $request) {
 
-        $emailUser = $request->input('emailUser');
+        $emailUser = $request->input('email');
         $user = $request->input('user');
         $testoUser = $request->input('testoUser');
         $datiUser = compact('emailUser', 'user', 'testoUser');

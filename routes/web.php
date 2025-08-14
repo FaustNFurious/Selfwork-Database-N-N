@@ -50,4 +50,4 @@ Route::get('/Servizi/dettagli/{id}', [ServicesController::class, 'servicesDetail
 
 
 /* Invio Email */
-Route::post('/ContattiEmail', [PublicController::class, 'contattiEmail'])->name('contattiEmail');
+Route::post('/ContattiEmail', [PublicController::class, 'contattiEmail'])->name('email.contattiEmail');

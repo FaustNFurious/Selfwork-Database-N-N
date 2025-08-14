@@ -68,15 +68,15 @@
 
                 <div class="col-12 text-white">
                     
-                    <form class="m-5" method="post" action="{{route('contattiEmail')}}">
+                    <form class="m-5" method="post" action="{{route('email.contattiEmail')}}">
                         @csrf
                         <div class="mb-3">
-                            <label for="emailUser" class="form-label">Inserire la propria Email</label>
-                            <input type="email" class="form-control" id="emailUser" class="emailUser" aria-describedby="emailHelp">
+                            <label for="email" class="form-label">Inserire la propria Email</label>
+                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                             <label for="user" class="form-label">Inserire il proprio nome</label>
-                            <input type="text" class="form-control" id="user" class="user" aria-describedby="emailHelp">
+                            <input type="text" class="form-control" id="user" name="user" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                             <label for="testoUser" class="form-label">Scrivici qualcosa</label>
