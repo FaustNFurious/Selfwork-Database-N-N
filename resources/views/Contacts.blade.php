@@ -68,7 +68,7 @@
 
                 <div class="col-12 text-white">
                     
-                    <form class="m-5" method="post" action="{{route('email.contattiEmail')}}">
+                    <form class="m-5" method="POST" action="{{route('email.contattiEmail')}}">
                         @csrf
                         <div class="mb-3">
                             <label for="email" class="form-label">Inserire la propria Email</label>

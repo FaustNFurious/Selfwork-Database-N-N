@@ -53,10 +53,10 @@ class PublicController extends Controller
             Mail::to($emailUser)->send(new ContactMail($datiUser));
 
         } catch (Exception $e) {
-            return redirect(route('home'))->with('erroreEmail', 'Ci scusiamo per il disagio, errore con il server');
+            return redirect(route('Home'))->with('erroreEmail', 'Ci scusiamo per il disagio, errore con il server');
         }
         
-        return redirect(route('home'))->with('email-inviata', 'Hai inviato la tua email');
+        return redirect(route('Home'))->with('email-inviata', 'Hai inviato la tua email');
 
     }
 

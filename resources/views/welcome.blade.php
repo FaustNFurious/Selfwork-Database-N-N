@@ -8,7 +8,7 @@
       <div class="container-fluid header-custom ">
 
         @if (session()->has('email-inviata'))
-          <div class="alert alert-secondary">
+          <div class="alert alert-secondary m-5">
             {{ session('email-inviata') }}
           </div>
         @endif
