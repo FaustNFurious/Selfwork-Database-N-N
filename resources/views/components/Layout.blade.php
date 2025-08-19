@@ -21,9 +21,9 @@
 <body>
 
 
-    <x-navbar>
+    <x-Navbar>
 
-    </x-navbar>
+    </x-Navbar>
 
     
     {{$slot}}

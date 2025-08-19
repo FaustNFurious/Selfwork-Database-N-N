@@ -1,4 +1,4 @@
-<x-layout>
+<x-Layout>
 
 
 
@@ -15,7 +15,7 @@
 
                 <div class="col-12 col-md-4">
 
-                    <x-cards 
+                    <x-Cards 
                         :computer="$computer" 
                     /> 
                         
@@ -34,4 +34,4 @@
 
 
 
-</x-layout>
+</x-Layout>

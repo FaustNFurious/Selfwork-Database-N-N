@@ -1,4 +1,4 @@
-<x-layout>
+<x-Layout>
 
 
 
@@ -29,4 +29,4 @@
 
 
 
-</x-layout>
+</x-Layout>
