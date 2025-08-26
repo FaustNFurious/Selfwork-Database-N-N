@@ -30,4 +30,18 @@ class ServicesController extends Controller
 
     }
 
+
+    public function servicesCreatation() {
+        return view('services.ServicesCreation');
+    }
+
+
+
+    public function storeData(Request $request) {
+
+
+        
+
+    }
+
 }

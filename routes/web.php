@@ -51,3 +51,16 @@ Route::get('/Servizi/dettagli/{id}', [ServicesController::class, 'servicesDetail
 
 /* Invio Email */
 Route::post('/ContattiEmail', [PublicController::class, 'contattiEmail'])->name('email.contattiEmail');
+
+
+
+
+
+/* Inserimento prodotto dall'utente */
+Route::get('/CreazioneProdotto', [ServicesController::class, 'servicesCreatation'])->name('services.ServicesCreation');
+
+
+
+
+/* Invio feedback una volta completato il prodotto */
+Route::post('/CreazioneProdottoSubmit', [ServicesController::class, 'storeData'])->name('services.Submit');
