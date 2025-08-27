@@ -9,6 +9,8 @@ use App\Models\Service;
 class ServicesController extends Controller
 {
 
+
+// Array utilizzato prima di usare il database
 /*    public $computers = [
                 ['id' => '1', 'name' => 'Asus Rog Ally X', 'brand' => 'Asus', 'utilizzo' => 'Gaming portatile', 'img' => '/Media/Img-Products/AsusRogAllyX.png'],
                 ['id' => '2', 'name' => 'HP Pavillon', 'brand' => 'HP', 'utilizzo' => 'Ufficio', 'img' => '/Media/Img-Products/HPPavillon.jpg'],
@@ -25,6 +27,8 @@ class ServicesController extends Controller
     }
 
 
+
+// Funzione utilizzata prima di usare il database
 /*    public function servicesDetails($id) {
 
         foreach ($this->computers as $computer) {
