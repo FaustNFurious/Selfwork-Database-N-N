@@ -8,14 +8,20 @@
       <div class="container-fluid header-custom ">
 
         @if (session()->has('email-inviata'))
-          <div class="alert alert-secondary m-5">
+          <div class="alert alert-secondary my-5">
             {{ session('email-inviata') }}
           </div>
         @endif
 
         @if (session()->has('erroreEmail'))
-          <div class="alert alert-danger">
+          <div class="alert alert-danger my-5">
             {{ session('erroreEmail') }}
+          </div>
+        @endif
+
+        @if (session()->has('Successo'))
+          <div class="alert alert-success my-5">
+            {{ session('Successo') }}
           </div>
         @endif
 
