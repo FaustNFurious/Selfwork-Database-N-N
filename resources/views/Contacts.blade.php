@@ -66,7 +66,7 @@
             <div class="row align-items-center justify-content-around">
                 <h3 class="text-center text-white display-6">Scrivici una Email</h3>
 
-                <div class="col-12 text-white">
+                <div class="col-12 col-md-6 text-white">
                     
                     <form class="my-5" method="POST" action="{{route('email.contattiEmail')}}">
                         @csrf
@@ -83,7 +83,7 @@
                             <textarea name="testoUser" id="testoUser" cols="20" rows="5" class="form-control"></textarea>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Invio</button>
                     </form>
                     
                 </div>
