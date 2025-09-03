@@ -25,13 +25,13 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="useFor" class="form-label">Utilizzo</label>
-                        <input type="text" class="form-control" name="useFor" id="useFor" aria-describedby="useForHelp">
+                        <label for="utilizzo" class="form-label">Utilizzo</label>
+                        <input type="text" class="form-control" name="utilizzo" id="utilizzo" aria-describedby="utilizzoHelp">
                     </div>
 
                     <div class="mb-3">
-                        <label for="price" class="form-label">Prezzo Prodotto</label>
-                        <input type="number" class="form-control" name="price" id="price" aria-describedby="priceHelp">
+                        <label for="prezzo" class="form-label">Prezzo Prodotto</label>
+                        <input type="number" class="form-control" name="prezzo" id="prezzo" aria-describedby="prezzoHelp">
                     </div>
                 
                     <button type="submit" class="btn btn-primary my-5">Invio Modulo</button>
