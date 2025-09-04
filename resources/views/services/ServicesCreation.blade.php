@@ -12,7 +12,7 @@
         <div class="row align-items-center justify-content-center">
             <div class="col-12 col-md-6">
 
-                <form class="my-5" method="POST" action="{{route('services.Submit')}}">
+                <form class="my-5" method="POST" action="{{route('services.Submit')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
                         <label for="brand" class="form-label">Marchio Prodotto</label>
@@ -32,6 +32,11 @@
                     <div class="mb-3">
                         <label for="prezzo" class="form-label">Prezzo Prodotto</label>
                         <input type="number" class="form-control" name="prezzo" id="prezzo" aria-describedby="prezzoHelp">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="img" class="form-label">Inserisci l'immagine del Prodotto</label>
+                        <input type="file" class="form-control" name="img" id="img" aria-describedby="imgHelp">
                     </div>
                 
                     <button type="submit" class="btn btn-primary my-5">Invio Modulo</button>

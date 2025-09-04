@@ -1,5 +1,12 @@
                     <div class="card my-5 mb-5" style="width: 18rem;">
-                        <img src="https://picsum.photos/200/300" class="card-img-top card-img-custom" alt="Immagine di {{$computer['name']}}">
+
+                    <!-- Caricamento Immagine di Default in caso il database non contenga immagini salvate -->
+                        @if(!$computer->img)
+                            <img src="https://picsum.photos/200/300" class="card-img-top card-img-custom" alt="Immagine di default">
+                        @else
+                        <img src="{{Storage::url($computer->img)}}" class="card-img-top card-img-custom" alt="Immagine di {{$computer['name']}}">
+                        @endif
+
                         <div class="card-body">
                             <h5 class="card-title">{{$computer['name']}}</h5>
                             <h6 class="card-subtitle mb-2 text-body-secondary">{{$computer['brand']}}</h6>

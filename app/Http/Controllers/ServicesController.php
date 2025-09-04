@@ -52,7 +52,8 @@ class ServicesController extends Controller
             'brand' => $request->brand,
             'name' => $request->name,
             'utilizzo' => $request->utilizzo,
-            'prezzo' => $request->prezzo
+            'prezzo' => $request->prezzo,
+            'img' => $request->file('img')->store('public/Immagini')
         ]);
 
 
