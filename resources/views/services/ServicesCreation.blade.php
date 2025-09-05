@@ -12,28 +12,41 @@
         <div class="row align-items-center justify-content-center">
             <div class="col-12 col-md-6">
 
+                <!-- Indica all'utente cosa si è dimenticato di inserire -->
+                @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{$error}}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <form class="my-5" method="POST" action="{{route('services.Submit')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
                         <label for="brand" class="form-label">Marchio Prodotto</label>
-                        <input type="text" class="form-control" name="brand" id="brand" aria-describedby="brandHelp">
+                        <input type="text" class="form-control" name="brand" id="brand" aria-describedby="brandHelp" value="{{old('brand')}}">
                     </div>
 
                     <div class="mb-3">
                         <label for="name" class="form-label">Nome Prodotto</label>
-                        <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp">
+                        <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp" value="{{old('name')}}">
                     </div>
 
                     <div class="mb-3">
                         <label for="utilizzo" class="form-label">Utilizzo</label>
-                        <input type="text" class="form-control" name="utilizzo" id="utilizzo" aria-describedby="utilizzoHelp">
+                        <input type="text" class="form-control" name="utilizzo" id="utilizzo" aria-describedby="utilizzoHelp" value="{{old('utilizzo')}}">
                     </div>
 
                     <div class="mb-3">
                         <label for="prezzo" class="form-label">Prezzo Prodotto</label>
-                        <input type="number" class="form-control" name="prezzo" id="prezzo" aria-describedby="prezzoHelp">
+                        <input type="number" class="form-control" name="prezzo" id="prezzo" aria-describedby="prezzoHelp" value="{{old('prezzo')}}">
                     </div>
 
+
+                    <!-- Per il campo file, non si può memorizzare il file inserito in precedenza se non si compilano tutti i campi, pertanto si dovrà necessariamente reinserire -->
                     <div class="mb-3">
                         <label for="img" class="form-label">Inserisci l'immagine del Prodotto</label>
                         <input type="file" class="form-control" name="img" id="img" aria-describedby="imgHelp">

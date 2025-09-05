@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Service;
+use App\Http\Requests\ServicesRequest;
+
 
 
 class ServicesController extends Controller
@@ -46,7 +48,8 @@ class ServicesController extends Controller
 
 
 
-    public function storeData(Request $request) {
+    // Per questa funzione si usa una richiesta specifica proveniente dal file ServicesRequest.php
+    public function storeData(ServicesRequest $request) {
 
         $service = Service::create([
             'brand' => $request->brand,
