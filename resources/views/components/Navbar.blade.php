@@ -11,14 +11,40 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{route('Home')}}">Home</a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link active" href="{{route('AboutUs')}}">Chi Siamo</a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link active" href="{{route('Contacts')}}">Contatti</a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link active" href="{{route('services.ServicesList')}}">Servizi</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Opzioni Utente
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{route('register')}}">Registrati</a></li>
+                        <li><a class="dropdown-item" href="{{route('login')}}">Login</a></li>
+
+                        <!--Per il pulsante di Logout bisogna eseguire più passaggi, perchè di norma i <li> supportano solo il metodo GET, 
+                            al Logout serve il metodo POST -->
+                        <li>
+
+                            <a href="{{route('logout')}}" class="dropdown-item"
+                                onclick="event.preventDefault(); document.getElementById('form-logout').submit();">Logout</a>
+
+                            <form action="{{route('logout')}}" method="POST" id="form-logout">@csrf</form>
+                            
+                        </li>
+                        
+                    </ul>
                 </li>
 
             </ul>
