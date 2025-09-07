@@ -13,5 +13,4 @@
                             <p class="card-text">utilizzo {{$computer['utilizzo']}}</p>
                             <a href="#" class="btn btn-primary">Read More</a>
                         </div>
-                    </div>
-                    
+                    </div>   
