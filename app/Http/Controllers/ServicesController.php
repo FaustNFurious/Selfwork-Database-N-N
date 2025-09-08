@@ -11,6 +11,11 @@ use App\Http\Requests\ServicesRequest;
 class ServicesController extends Controller
 {
 
+    // Tramite questa funzione, solo gli utenti loggati possono accedere a questi servizi
+    public function __construct() {
+        $this->middleware('auth')->except('serviceList');
+    }
+
 
 // Array utilizzato prima di usare il database
 /*    public $computers = [

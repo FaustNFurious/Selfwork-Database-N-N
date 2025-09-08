@@ -1,10 +1,12 @@
 <x-Layout>
 
     <div class="container">
-        <div class="row justify-content-center align-items-center">
+        <div class="row vh-100 justify-content-center align-items-center">
             <div class="col-12 col-md-6">
 
-                <form class="my-5" method="POST" action="{{route('register')}}">
+                <h3 class="text-center display-6">Effettua subito il Login</h3>
+
+                <form class="my-5" method="POST" action="{{route('login')}}">
                     @csrf
                     <div class="mb-3">
                         <label for="inputEmail" class="form-label">Indirizzo Email</label>
