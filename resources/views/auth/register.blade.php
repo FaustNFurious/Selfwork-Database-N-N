@@ -10,7 +10,7 @@
                     @csrf
                     <div class="mb-3">
                         <label for="nome" class="form-label">Inserisci il tuo Nome</label>
-                        <input type="text" name="nome" class="form-control" id="nome" aria-describedby="nomeHelp">
+                        <input type="text" name="name" class="form-control" id="nome" aria-describedby="nomeHelp">
                     </div>
 
                     <div class="mb-3">
@@ -25,7 +25,7 @@
 
                     <div class="mb-3">
                         <label for="inputPasswordCheck" class="form-label">Conferma la tua Password</label>
-                        <input type="password" name="passwordCheck" class="form-control" id="inputPasswordCheck">
+                        <input type="password" name="password_confirmation" class="form-control" id="inputPasswordCheck">
                     </div> 
 
                     <button type="submit" class="btn btn-primary">Registrati</button>

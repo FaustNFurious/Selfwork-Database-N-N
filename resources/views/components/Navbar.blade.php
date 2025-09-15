@@ -40,7 +40,7 @@
                                 <a href="{{route('logout')}}" class="dropdown-item"
                                     onclick="event.preventDefault(); document.getElementById('form-logout').submit();">Logout</a>
 
-                                <form action="{{route('logout')}}" method="POST" id="form-logout">@csrf</form>
+                                <form action="{{route('logout')}}" method="POST" id="form-logout" style="display: none;">@csrf</form>
                                 
                             </li>
                             
