@@ -9,23 +9,23 @@
                 <form class="my-5" method="POST" action="{{route('register')}}">
                     @csrf
                     <div class="mb-3">
-                        <label for="nome" class="form-label">Inserisci il tuo Nome</label>
-                        <input type="text" name="name" class="form-control" id="nome" aria-describedby="nomeHelp">
+                        <label for="nomeReg" class="form-label">Inserisci il tuo Nome</label>
+                        <input type="text" name="name" class="form-control" id="nomeReg" aria-describedby="nomeHelp">
                     </div>
 
                     <div class="mb-3">
-                        <label for="inputEmail" class="form-label">Indirizzo Email</label>
-                        <input type="email" name="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+                        <label for="inputEmailReg" class="form-label">Indirizzo Email</label>
+                        <input type="email" name="email" class="form-control" id="inputEmailReg" aria-describedby="emailHelp">
                     </div>
 
                     <div class="mb-3">
-                        <label for="inputPassword" class="form-label">Inserisci la tua Password</label>
-                        <input type="password" name="password" class="form-control" id="inputPassword">
+                        <label for="inputPasswordReg" class="form-label">Inserisci la tua Password</label>
+                        <input type="password" name="password" class="form-control" id="inputPasswordReg">
                     </div>
 
                     <div class="mb-3">
-                        <label for="inputPasswordCheck" class="form-label">Conferma la tua Password</label>
-                        <input type="password" name="password_confirmation" class="form-control" id="inputPasswordCheck">
+                        <label for="inputPasswordCheckReg" class="form-label">Conferma la tua Password</label>
+                        <input type="password" name="password_confirmation" class="form-control" id="inputPasswordCheckReg">
                     </div> 
 
                     <button type="submit" class="btn btn-primary">Registrati</button>

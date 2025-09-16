@@ -9,13 +9,13 @@
                 <form class="my-5" method="POST" action="{{route('login')}}">
                     @csrf
                     <div class="mb-3">
-                        <label for="inputEmail" class="form-label">Indirizzo Email</label>
-                        <input type="email" name="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+                        <label for="inputEmailLogin" class="form-label">Indirizzo Email</label>
+                        <input type="email" name="email" class="form-control" id="inputEmailLogin" aria-describedby="emailHelp">
                     </div>
 
                     <div class="mb-3">
-                        <label for="inputPassword" class="form-label">Inserisci la tua Password</label>
-                        <input type="password" name="password" class="form-control" id="inputPassword">
+                        <label for="inputPasswordLogin" class="form-label">Inserisci la tua Password</label>
+                        <input type="password" name="password" class="form-control" id="inputPasswordLogin">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Login</button>
