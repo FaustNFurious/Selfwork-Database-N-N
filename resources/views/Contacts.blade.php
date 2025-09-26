@@ -10,7 +10,7 @@
             <div class="row vh-100 align-items-center justify-content-around">
 
                 <div class="col-12">
-                    <h2 class="text-light text-center display-1 fw-bold">Come Contattarci</h2>
+                    <h2 class=" my-5 text-light text-center display-1 fw-bold">Come Contattarci</h2>
                 </div>
 
                 <div class="col-md-3 box-custom text-center d-flex flex-column justify-content-center align-items-center text-white">
@@ -64,11 +64,11 @@
             </div>
 
             <div class="row align-items-center justify-content-around">
-                <h3 class="text-center text-white display-6">Scrivici una Email</h3>
+                <h3 class="my-5 text-center text-white display-6">Scrivici una Email</h3>
 
                 <div class="col-12 col-md-6 text-white">
                     
-                    <form class="my-5" method="POST" action="{{route('email.contattiEmail')}}">
+                    <form class="my-3" method="POST" action="{{route('email.contattiEmail')}}">
                         @csrf
                         <div class="mb-3">
                             <label for="email" class="form-label">Inserire la propria Email</label>
