@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Http\Requests\ServicesRequest;
+use App\Http\Requests\ServicesUpdateRequest;
 
 
 
@@ -13,7 +14,7 @@ class ServicesController extends Controller
 
     // Tramite questa funzione, solo gli utenti loggati possono accedere a questi servizi
     public function __construct() {
-        $this->middleware('auth')->except('serviceList');
+        $this->middleware('auth')->except('servicesList', 'servicesDetails');
     }
 
 
@@ -35,17 +36,48 @@ class ServicesController extends Controller
 
 
 
-// Funzione utilizzata prima di usare il database
-/*    public function servicesDetails($id) {
+    // Funzione che visualizza l'info del prodotto selezionato
+    public function servicesDetails(Service $computer) {
+        return view('services.ServicesDetails', compact('computer'));
+    }
 
-        foreach ($this->computers as $computer) {
-            if ($id == $computer['id']) {
-                return view('services.ServicesDetails', ['computer' => $computer]);
-            }
+
+    public function servicesModify(Service $computer) {
+        return view('services.ServicesModify', compact('computer'));
+    }
+
+
+    public function servicesUpdate(ServicesUpdateRequest $request, Service $computer) {
+
+        $computer->update([
+            $computer->brand = $request->brand,
+            $computer->name = $request->name,
+            $computer->utilizzo = $request->utilizzo,
+            $computer->prezzo = $request->prezzo
+        ]);
+
+        // opzione che modifica l'immagine solo se l'utente la cambia effettivamente, altrimenti rimane quella di prima
+        if($request->img) {
+            $request->validate(['img' => 'image']);
+            $computer->update([
+                $computer->img = $request->file('img')->store('public/Immagini')
+            ]);
         }
 
+        return redirect()->route('Home')->with('Successo', 'Hai modificato il tuo prodotto correttamente');
+
     }
-*/
+
+
+    // Funzione che cancella il prodotto selezionato
+    public function servicesDelete(Service $computer) {
+        
+        $computer->delete();
+        return redirect()->route('Home')->with('Successo', 'Hai eliminato il tuo prodotto correttamente');
+
+    }
+
+
 
     public function servicesCreatation() {
         return view('services.ServicesCreation');

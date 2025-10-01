@@ -43,8 +43,13 @@ Route::get('/Contatti', function() {
 /* Link Pagina Servizi */
 Route::get('/Servizi', [ServicesController::class, 'servicesList'])->name('services.ServicesList');
 
-Route::get('/Servizi/dettagli/{id}', [ServicesController::class, 'servicesDetails'])->name('services.ServicesDetails');
+Route::get('/Servizi/dettagli/{computer}', [ServicesController::class, 'servicesDetails'])->name('services.ServicesDetails');
 
+Route::get('/Servizi/modifica/{computer}', [ServicesController::class, 'servicesModify'])->name('services.ServicesModify');
+
+Route::put('/Servizi/aggiorna/{computer}', [ServicesController::class, 'servicesUpdate'])->name('services.ServicesUpdate');
+
+Route::delete('/Servizi/cancellazione/{computer}', [ServicesController::class, 'servicesDelete'])->name('services.ServicesDelete');
 
 
 
@@ -64,3 +69,7 @@ Route::get('/CreazioneProdotto', [ServicesController::class, 'servicesCreatation
 
 /* Invio feedback una volta completato il prodotto */
 Route::post('/CreazioneProdottoSubmit', [ServicesController::class, 'storeData'])->name('services.Submit');
+
+
+
+

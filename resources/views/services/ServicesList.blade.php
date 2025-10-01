@@ -11,19 +11,23 @@
                 <h3 class="text-dark text-center display-4 my-5">Tutti i nostri prodotti</h3>
             </div>
 
-            @foreach($computers as $computer)
+            @forelse($computers as $computer)
 
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-3">
 
                     <x-Cards 
                         :computer="$computer" 
                     /> 
                         
-                    
+                </div>
+                
+            @empty
 
+                <div class="col-12">
+                    <h3 class="text-center my-5 text-dark">Nessun prodotto ancora registrato</h3>
                 </div>
 
-            @endforeach
+            @endforelse
         
         </div>
 

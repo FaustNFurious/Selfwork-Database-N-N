@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ServicesRequest extends FormRequest
+class ServicesUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,8 +27,7 @@ class ServicesRequest extends FormRequest
             'brand' => 'required|min:2',    // Campo obbligatorio, minimo 2 caratteri
             'name' => 'required',
             'utilizzo' => 'required',
-            'prezzo' => 'required|numeric', // numeric == vuole un numero come parametro
-            'img' => 'required|image'       // image == vuole un'immagine come parametro
+            'prezzo' => 'required|numeric'  // numeric == vuole un numero come parametro
 
         ];
     }
@@ -45,12 +44,9 @@ class ServicesRequest extends FormRequest
             'name.required' => 'Il campo Nome è obbligatorio',
             'utilizzo.required' => 'Il campo Utilizzo è obbligatorio',
             'prezzo.required' => 'Il campo Prezzo è obbligatorio',
-            'prezzo.numeric' => 'Il campo Prezzo deve essere un numero',
-            'img.required' => 'Il campo Immagine Prodotto è obbligatorio',
-            'img.image' => 'Il campo Immagine Prodotto deve essere di tipo immagine'
+            'prezzo.numeric' => 'Il campo Prezzo deve essere un numero'
 
         ];
     }
 
-    
 }

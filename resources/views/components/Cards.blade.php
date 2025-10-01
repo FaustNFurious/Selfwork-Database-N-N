@@ -8,9 +8,14 @@
                         @endif
 
                         <div class="card-body">
-                            <h5 class="card-title">{{$computer['name']}}</h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">{{$computer['brand']}}</h6>
-                            <p class="card-text">utilizzo {{$computer['utilizzo']}}</p>
-                            <a href="#" class="btn btn-primary">Read More</a>
+
+                            <h5 class="card-title">Nome: {{$computer['name']}}</h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">Marchio: {{$computer['brand']}}</h6>
+                            <p class="card-text">Utilizzo: {{$computer['utilizzo']}}</p>
+
+                            <a href="{{route('services.ServicesDetails', compact('computer'))}}" class="btn btn-primary">Più Info</a>
+                            <a href="{{route('services.ServicesModify', compact('computer'))}}" class="btn btn-primary">Modifica</a>
+
                         </div>
+
                     </div>   
