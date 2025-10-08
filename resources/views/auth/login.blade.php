@@ -1,5 +1,17 @@
 <x-Layout>
 
+    <!-- Segmento che ritorna errori di compilazione del form -->
+    @if ($errors->any())
+        <div class="alert alert-danger my-5">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+
     <div class="container">
         <div class="row vh-100 justify-content-center align-items-center">
             <div class="col-12 col-md-6">
