@@ -33,6 +33,12 @@
                         </a>
 
                         <ul class="dropdown-menu">
+                            
+                            <li>
+                                <a class="dropdown-item" href="{{route('user.Profilo')}}">Il mio Profilo</a>
+                            </li>
+
+
                             <!--Per il pulsante di Logout bisogna eseguire più passaggi, perchè di norma i <li> supportano solo il metodo GET, 
                                 al Logout serve il metodo POST -->
                             <li>

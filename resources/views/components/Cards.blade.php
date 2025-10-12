@@ -12,9 +12,18 @@
                             <h5 class="card-title">Nome: {{$computer['name']}}</h5>
                             <h6 class="card-subtitle mb-2 text-body-secondary">Marchio: {{$computer['brand']}}</h6>
                             <p class="card-text">Utilizzo: {{$computer['utilizzo']}}</p>
+                            <p class="card-text">Prezzo: {{$computer['prezzo']}}€</p>
+                            <p class="card-text">Creato da: {{$computer->user->name}}</p>
 
                             <a href="{{route('services.ServicesDetails', compact('computer'))}}" class="btn btn-primary">Più Info</a>
-                            <a href="{{route('services.ServicesModify', compact('computer'))}}" class="btn btn-primary">Modifica</a>
+
+                            @auth
+                                <!-- Il pulsante viene mostrato solo se l'utente è autenticato ed è stato lui a creare il prodotto -->
+                                @if ($computer->user_id == Auth::id())
+                                    <a href="{{route('services.ServicesModify', compact('computer'))}}" class="btn btn-primary">Modifica</a>
+                                @endif
+                                
+                            @endauth
 
                         </div>
 

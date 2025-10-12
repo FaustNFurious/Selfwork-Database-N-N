@@ -25,6 +25,13 @@
           </div>
         @endif
 
+        @if (session()->has('Errore'))
+          <div class="alert alert-danger my-5">
+            {{ session('Errore') }}
+          </div>
+        @endif
+
+
         <div class="row vh-100 align-items-center">
           <div class="col-12">
             <h1 class="text-light text-center display-1 fw-bold">Blog Personale</h1>

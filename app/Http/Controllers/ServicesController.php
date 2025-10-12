@@ -6,13 +6,14 @@ use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Http\Requests\ServicesRequest;
 use App\Http\Requests\ServicesUpdateRequest;
+use Illuminate\Support\Facades\Auth;
 
 
 
 class ServicesController extends Controller
 {
 
-    // Tramite questa funzione, solo gli utenti loggati possono accedere a questi servizi
+    // Tramite questa funzione, solo gli utenti loggati possono accedere a questi servizi, eccetto la lista e i dettagli dei prodotti
     public function __construct() {
         $this->middleware('auth')->except('servicesList', 'servicesDetails');
     }
@@ -43,28 +44,39 @@ class ServicesController extends Controller
 
 
     public function servicesModify(Service $computer) {
-        return view('services.ServicesModify', compact('computer'));
+
+        if($computer->user_id == Auth::user()->id) {
+            return view('services.ServicesModify', compact('computer'));
+        } else {
+            return redirect()->route('Home')->with('Errore', 'Non puoi modificare un prodotto che non hai creato tu');
+        }
+
     }
 
 
     public function servicesUpdate(ServicesUpdateRequest $request, Service $computer) {
 
-        $computer->update([
-            $computer->brand = $request->brand,
-            $computer->name = $request->name,
-            $computer->utilizzo = $request->utilizzo,
-            $computer->prezzo = $request->prezzo
-        ]);
-
-        // opzione che modifica l'immagine solo se l'utente la cambia effettivamente, altrimenti rimane quella di prima
-        if($request->img) {
-            $request->validate(['img' => 'image']);
+        if($computer->user_id == Auth::user()->id) {
             $computer->update([
-                $computer->img = $request->file('img')->store('public/Immagini')
+                $computer->brand = $request->brand,
+                $computer->name = $request->name,
+                $computer->utilizzo = $request->utilizzo,
+                $computer->prezzo = $request->prezzo
             ]);
-        }
 
-        return redirect()->route('Home')->with('Successo', 'Hai modificato il tuo prodotto correttamente');
+            // opzione che modifica l'immagine solo se l'utente la cambia effettivamente, altrimenti rimane quella di prima
+            if($request->img) {
+                $request->validate(['img' => 'image']);
+                $computer->update([
+                    $computer->img = $request->file('img')->store('public/Immagini')
+                ]);
+            }
+
+            return redirect()->route('Home')->with('Successo', 'Hai modificato il tuo prodotto correttamente');
+
+        } else {
+            return redirect()->route('Home')->with('Errore', 'Non puoi modificare un prodotto che non hai creato tu');
+        }
 
     }
 
@@ -72,14 +84,18 @@ class ServicesController extends Controller
     // Funzione che cancella il prodotto selezionato
     public function servicesDelete(Service $computer) {
         
-        $computer->delete();
-        return redirect()->route('Home')->with('Successo', 'Hai eliminato il tuo prodotto correttamente');
+        if($computer->user_id == Auth::user()->id) {
+            $computer->delete();
+            return redirect()->route('Home')->with('Successo', 'Hai eliminato il tuo prodotto correttamente');
+        } else {
+            return redirect()->route('Home')->with('Errore', 'Non puoi eliminare un prodotto che non hai creato tu');
+        }
 
     }
 
 
 
-    public function servicesCreatation() {
+    public function servicesCreation() {
         return view('services.ServicesCreation');
     }
 
@@ -93,7 +109,8 @@ class ServicesController extends Controller
             'name' => $request->name,
             'utilizzo' => $request->utilizzo,
             'prezzo' => $request->prezzo,
-            'img' => $request->file('img')->store('public/Immagini')
+            'img' => $request->file('img')->store('public/Immagini'),
+            'user_id' => Auth::user()->id
         ]);
 
 

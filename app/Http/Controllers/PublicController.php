@@ -60,4 +60,11 @@ class PublicController extends Controller
 
     }
 
+
+
+    public function profilo() {
+        return view('Profilo');
+    }
+
+    
 }

@@ -62,7 +62,7 @@ Route::post('/ContattiEmail', [PublicController::class, 'contattiEmail'])->name(
 
 
 /* Inserimento prodotto dall'utente */
-Route::get('/CreazioneProdotto', [ServicesController::class, 'servicesCreatation'])->name('services.ServicesCreation');
+Route::get('/CreazioneProdotto', [ServicesController::class, 'servicesCreation'])->name('services.ServicesCreation');
 
 
 
@@ -73,3 +73,5 @@ Route::post('/CreazioneProdottoSubmit', [ServicesController::class, 'storeData']
 
 
 
+// Profilo Utente
+Route::get('/Utente/Profilo', [PublicController::class, 'profilo'])->name('user.Profilo');

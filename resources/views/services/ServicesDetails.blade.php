@@ -6,6 +6,7 @@
     <section>
 
         <div class="container-fluid section-custom">
+
             <div class="row align-items-center justify-content-center">
 
                 <div class="row">
@@ -22,19 +23,26 @@
                     <img src="{{Storage::url($computer->img)}}" class="card-img-top card-img-custom" alt="Immagine di {{$computer['name']}}">
                 </div>
 
-                <div class="row">
+                @auth
+                    <!-- Il pulsante viene mostrato solo se l'utente è autenticato ed è stato lui a creare il prodotto -->
+                    @if ($computer->user_id == Auth::id())
+                        <div class="row">
 
-                    <form action="{{route('services.ServicesDelete', compact('computer'))}}" method="POST">
-                        @csrf
-                        @method('DELETE')
+                            <form action="{{route('services.ServicesDelete', compact('computer'))}}" method="POST">
+                                @csrf
+                                @method('DELETE')
 
-                        <button class="btn btn-danger my-5" type="submit">Cancella Prodotto</button>
+                                <button class="btn btn-danger my-5" type="submit">Cancella Prodotto</button>
 
-                    </form>
+                            </form>
 
-                </div>
+                        </div>
+                    @endif
+
+                @endauth
                             
             </div>
+            
         </div>
 
     </section>
