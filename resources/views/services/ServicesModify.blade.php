@@ -39,13 +39,13 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="utilizzo" class="form-label">Utilizzo</label>
-                        <input type="text" class="form-control" name="utilizzo" id="utilizzo" aria-describedby="utilizzoHelp" value="{{$computer->utilizzo}}">
+                        <label for="usage" class="form-label">Utilizzo</label>
+                        <input type="text" class="form-control" name="usage" id="usage" aria-describedby="usageHelp" value="{{$computer->usage}}">
                     </div>
 
                     <div class="mb-3">
-                        <label for="prezzo" class="form-label">Prezzo Prodotto</label>
-                        <input type="number" class="form-control" name="prezzo" id="prezzo" aria-describedby="prezzoHelp" value="{{$computer->prezzo}}">
+                        <label for="price" class="form-label">Prezzo Prodotto</label>
+                        <input type="number" class="form-control" name="price" id="price" aria-describedby="priceHelp" value="{{$computer->price}}">
                     </div>
 
                     <!-- L'operazione di value non si può assegnare per img -->

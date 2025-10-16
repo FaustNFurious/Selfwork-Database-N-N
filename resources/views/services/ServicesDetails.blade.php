@@ -5,22 +5,23 @@
 
     <section>
 
-        <div class="container-fluid section-custom">
+        <div class="container-fluid servizi-custom">
 
-            <div class="row align-items-center justify-content-center">
+            <div class="row align-items-center justify-content-center vh-100">
 
                 <div class="row">
-                    <h2 class="text-dark text-center display-4 my-5">{{$computer['name']}}</h2>
+                    <h2 class="text-white text-center display-4 my-5">{{$computer['name']}}</h2>
                 </div>
 
-                <div class="col-12 col-md-6 align-items-center justify-content-center text-dark">
+                <div class="col-12 col-md-6 align-items-center justify-content-center text-white">
                     <h5>Nome Prodotto: {{$computer['name']}}</h5>
                     <h6>Marchio Prodotto: {{$computer['brand']}}</h6>
-                    <p>Utilizzo Principale: {{$computer['utilizzo']}}</p>
+                    <p>Utilizzo Principale: {{$computer['usage']}}</p>
+                    <p>Prezzo Prodotto: {{$computer['price']}}€</p>
                 </div>
 
                 <div class="col-12 col-md-6">
-                    <img src="{{Storage::url($computer->img)}}" class="card-img-top card-img-custom" alt="Immagine di {{$computer['name']}}">
+                    <img src="{{Storage::url($computer->img)}}" class="card-img-top card-img-custom text-white" alt="Immagine di {{$computer['name']}}">
                 </div>
 
                 @auth

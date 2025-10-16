@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('brand');
             $table->string('name');
-            $table->string('utilizzo');
-            $table->float('prezzo');
+            $table->string('usage');
+            $table->float('price');
             $table->timestamps();
         });
     }

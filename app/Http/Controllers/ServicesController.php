@@ -60,8 +60,8 @@ class ServicesController extends Controller
             $computer->update([
                 $computer->brand = $request->brand,
                 $computer->name = $request->name,
-                $computer->utilizzo = $request->utilizzo,
-                $computer->prezzo = $request->prezzo
+                $computer->usage = $request->usage,
+                $computer->price = $request->price
             ]);
 
             // opzione che modifica l'immagine solo se l'utente la cambia effettivamente, altrimenti rimane quella di prima
@@ -107,8 +107,8 @@ class ServicesController extends Controller
         $service = Service::create([
             'brand' => $request->brand,
             'name' => $request->name,
-            'utilizzo' => $request->utilizzo,
-            'prezzo' => $request->prezzo,
+            'usage' => $request->usage,
+            'price' => $request->price,
             'img' => $request->file('img')->store('public/Immagini'),
             'user_id' => Auth::user()->id
         ]);

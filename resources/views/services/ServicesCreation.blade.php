@@ -5,7 +5,7 @@
 
     <div class="container-fluid">
 
-        <div class="row">
+        <div class="row my-5">
             <h3 class="text-dark text-center display-4 my-5">Inserisci il tuo Prodotto desiderato</h3>
         </div>
 
@@ -36,13 +36,13 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="utilizzo" class="form-label">Utilizzo</label>
-                        <input type="text" class="form-control" name="utilizzo" id="utilizzo" aria-describedby="utilizzoHelp" value="{{old('utilizzo')}}">
+                        <label for="usage" class="form-label">Utilizzo</label>
+                        <input type="text" class="form-control" name="usage" id="usage" aria-describedby="usageHelp" value="{{old('usage')}}">
                     </div>
 
                     <div class="mb-3">
-                        <label for="prezzo" class="form-label">Prezzo Prodotto</label>
-                        <input type="number" class="form-control" name="prezzo" id="prezzo" aria-describedby="prezzoHelp" value="{{old('prezzo')}}">
+                        <label for="price" class="form-label">Prezzo Prodotto</label>
+                        <input type="number" class="form-control" name="price" id="price" aria-describedby="priceHelp" value="{{old('price')}}">
                     </div>
 
 

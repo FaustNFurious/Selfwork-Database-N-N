@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('services', function (Blueprint $table) {
-            $table->string('img')->after('prezzo');  // Se non si usa 'after', la nuova colonna verrà inserita al fondo della tabella
+            $table->string('img')->after('price');  // Se non si usa 'after', la nuova colonna verrà inserita al fondo della tabella
         });
     }
 
