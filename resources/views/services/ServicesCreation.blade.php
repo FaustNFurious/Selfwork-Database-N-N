@@ -51,7 +51,18 @@
                         <label for="img" class="form-label">Inserisci l'immagine del Prodotto</label>
                         <input type="file" class="form-control" name="img" id="img" aria-describedby="imgHelp">
                     </div>
+
+                    @foreach($types as $type)
+                        
+                        <input type="checkbox" id="{{'typeCheck' . $type->id}}" name="types[]" value="{{$type->id}}">
+                        <label for="{{'typeCheck' . $type->id}}">{{$type->name}}</label>
+
+                    @endforeach
+
+                    <p>Non trovi la tipologia di utilizzo corretto? <a href="{{route('type.Create')}}">Aggiungila tu!</a> </p>
                 
+
+                    
                     <button type="submit" class="btn btn-primary my-5">Invio Modulo</button>
 
                 </form>

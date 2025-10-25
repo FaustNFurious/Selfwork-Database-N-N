@@ -26,6 +26,20 @@
 
                 <li class="nav-item dropdown">
 
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Creazioni
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{route('services.ServicesCreation')}}">Creazione Prodotto</a></li>
+                        <li><a class="dropdown-item" href="{{route('type.Create')}}">Aggiungi Nuovo Utilizzo</a></li>
+                        <li><a class="dropdown-item" href="{{route('type.Index')}}">Tutti gli Utilizzi</a></li>
+                    </ul>
+
+                </li>
+
+                <li class="nav-item dropdown">
+
                     <!-- Se l'utente è già loggato, visualizzo un tipo menù, altrimenti visualizzo le impostazioni generiche -->
                     @auth
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

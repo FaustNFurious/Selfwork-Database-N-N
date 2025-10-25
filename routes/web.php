@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\TypeController;
+
 
 
 /*
@@ -76,3 +78,12 @@ Route::post('/CreazioneProdottoSubmit', [ServicesController::class, 'storeData']
 
 // Profilo Utente
 Route::get('/Utente/Profilo', [PublicController::class, 'profilo'])->name('user.Profilo');
+
+
+
+
+// Type of Services
+Route::get('/Tipologie/creazione', [TypeController::class, 'typesCreate'])->name('type.Create');
+Route::post('/Tipologie/creazione/submit', [TypeController::class, 'typesStore'])->name('type.Submit');
+route::get('/Tipologie/index', [TypeController::class, 'typesIndex'])->name('type.Index');
+Route::get('/Tipologie/list/{type}', [TypeController::class, 'typesList'])->name('type.List');

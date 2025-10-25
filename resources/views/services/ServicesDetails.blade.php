@@ -14,10 +14,20 @@
                 </div>
 
                 <div class="col-12 col-md-6 align-items-center justify-content-center text-white">
+
                     <h5>Nome Prodotto: {{$computer['name']}}</h5>
                     <h6>Marchio Prodotto: {{$computer['brand']}}</h6>
                     <p>Utilizzo Principale: {{$computer['usage']}}</p>
                     <p>Prezzo Prodotto: {{$computer['price']}}€</p>
+
+                    <ul>
+                        @forelse($computer->types as $type)
+                            <li>{{$type->name}}</li>
+                        @empty
+                            <p>Nessuna Tipologia Associata</p>
+                        @endforelse
+                    </ul>
+
                 </div>
 
                 <div class="col-12 col-md-6">

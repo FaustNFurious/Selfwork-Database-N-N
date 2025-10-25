@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Service;
+use App\Models\Type;
 use App\Http\Requests\ServicesRequest;
 use App\Http\Requests\ServicesUpdateRequest;
 use Illuminate\Support\Facades\Auth;
@@ -96,7 +97,10 @@ class ServicesController extends Controller
 
 
     public function servicesCreation() {
-        return view('services.ServicesCreation');
+
+        $types = Type::all();
+        return view('services.ServicesCreation', compact('types'));
+
     }
 
 
@@ -112,6 +116,11 @@ class ServicesController extends Controller
             'img' => $request->file('img')->store('public/Immagini'),
             'user_id' => Auth::user()->id
         ]);
+
+
+        if($request->has('types')) {
+            $service->types()->attach($request->types);
+        }
 
 
         return redirect()->route('Home')->with('Successo', 'Hai inviato il tuo prodotto correttamente');

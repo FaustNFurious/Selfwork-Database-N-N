@@ -15,6 +15,14 @@
                             <p class="card-text">Prezzo: {{$computer['price']}}€</p>
                             <p class="card-text">Creato da: {{$computer->user->name}}</p>
 
+                            <div class="d-flex">
+                                @forelse($computer->types as $type)
+                                    <a href="{{route('type.List', compact('type'))}}" class="badge bg-secondary m-1 mb-3 mx-auto text-decoration-none">{{$type->name}}</a>
+                                @empty
+                                    <p>Nessuna Tipologia Associata</p>
+                                @endforelse
+                            </div>
+
                             <a href="{{route('services.ServicesDetails', compact('computer'))}}" class="btn btn-primary">Più Info</a>
 
                             @auth
